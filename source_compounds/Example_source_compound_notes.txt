@@ -1,0 +1,50 @@
+
+Source compound molecules were prepared in the following ways:
+
+autogrow4/source_compounds/naphthalene_smiles.smi:
+    -This list was taken from AutoGrow 3.1.3's naphthalene source molecules.
+    These ligands were converted to SMILES from PDB usings openbabel
+
+autogrow4/source_compounds/PARPi.smi:
+    -This is a list of 11 PARPi from FDA.org.
+
+autogrow4/source_compounds/PARPI_BRICS_frags.smi
+    - This contains the 11 PARPi from source_compounds/PARPi.smi as well as fragments from each of those PARPi.
+    - The 83 fragments were generated using rdkit's BRIC decomposition function
+    - A minimum size for fragments was 3 non-hydrogen atoms
+
+ZINC molecules:
+    All compounds were retrieved on 12/19/19
+
+    We retrieved ligands from the Zinc15 database.
+        The ligands retrieved were limited to:
+            1) commercially available (wait Ok or sooner)
+            2) MW less than or equal to 250Da
+            3) LogP less than or equal to 5.0
+            4) Any level of reactivity level. (ie Most reactive: Hot)
+
+        This resulted in 19,274,338 substances and 420 Tranches
+
+
+    This list was further filtered to ensure that the SMILES could be converted to rdkit mol object
+    and filtered with Lipinski Strict Filter.
+    We then separated the compounds into populations of functional group libraries for the click_chem_rxns
+    and robust_rxns.
+
+    We then randomly selected 100 compounds per functional group for each of the MW ranges... 
+    If a functional group did not have 100 compounds within a given MW range, we added however many compounds 
+    within that range. This approach ensured that every compound would be able to react when using the all_rxns
+    library and that there would be a diverse set of starting compounds at a varied MW. Redundant compounds
+    were removed to a single entry.
+
+    The resulting four lists of compounds are provided at the following locations:
+        1) MW >=100da           :  autogrow4/source_compounds/Fragment_MW_up_to_100.smi
+        2) 100da > MW >=150da   :  autogrow4/source_compounds/Fragment_MW_100_to_150.smi
+        3) 150da > MW >=200da   :  autogrow4/source_compounds/Fragment_MW_150_to_200.smi
+        4) 200da > MW >=250da   :  autogrow4/source_compounds/Fragment_MW_200_to_250.smi
+
+    The total number of different ZINC15 molecules in these four files is 24,595 compounds.
+    
+    These compounds were derived from a subset of the ZINC database (https://zinc.docking.org/).
+    We thank ZINC for allowing us to distribute these fragment 
+    libraries to AutoGrow users.

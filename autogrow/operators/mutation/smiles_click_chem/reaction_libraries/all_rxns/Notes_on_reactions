@@ -1,0 +1,7 @@
+This director of reactions is the merger of the Robust and ClickChem librarys.
+The reaction numbering starts with ClickChem numbering followed by the Robust reactions
+
+Please see other libraries for more in-depth preparation notes
+
+All functional groups that start with a lowercase or a number and "_robust" at the end are from the Robust_reactions
+All functional groups that start with an uppercase and "_clickchem" at the endare from ClickChem reactions

@@ -1,0 +1,19 @@
+{
+    "Acid_Anhydride_Noncyclic_clickchem": "[*]C(=O)-[O;R0]-C(=O)[*]",
+    "Alcohol_clickchem": "[#6&$([CR0,R1X3,R1X4])&!$([#6](=,-[OR0,SR0])[OR0])]-[OR0;H1,-]",
+    "Alkene_clickchem": "[CR0;X3,X2H1,X1H2]=[CR0;X3,X2H1,X1H2]",
+    "Alkyne_clickchem": "[CR0;X2,X1H1]#[CR0;X2,X1H1]",
+    "Amine_2R_clickchem":  "[#7;$([#7;H3+,H2R0X1]-[#6]),$([#7&!H3;H1R1X3](:,-[#6R1]):,-[#6R1,#7R1]),$([#7&!H3;H2]-[#6]),$([#7&!H3;H0R1X2](:,-[#6R1;X3H1]):,-[#6R1X3H1]),$([#7&!H3;H0R1X2](:,-[#6R1;X3]):,-[#7R1X3]),$([#7&!H3;H1R0X3](-[#6])-[#6R0])]", 
+    "Azide_1R_clickchem": "[*;#6]-[$(N=[N+]=[N-]),$([N-][N+]#N)]",
+    "Carbonochloridate_clickchem": "Cl[C;X3](=O)-O[*]",
+    "Carboxylate_clickchem": "[*;!O]-[$([CR0;X3](=[OR0&D1])[OR0&H1]),$([CR0;X3](=[OR0&D1])[OR0-])]",
+    "Epoxide_clickchem": "[CR1;H2,H1X4,H0X4]1O[CR1;H2,H1X4,H0X4]1",
+    "Ester_clickchem": "[*;#6]C(=O)-O[*]",
+    "Halide_clickchem": "[Cl,Br,I][$([CX4,c]),$([#6X3]=[O,S])]",
+    "Isocyanate_clickchem": "[#6]N=C=O",
+    "Isothiocyanate_clickchem": "[#6]N=C=S",
+    "Primary_Amine_1R_clickchem": "[#7;$([H3+]),$([H2R0;!+])]-[#6]",
+    "Sulfonyl_Azide_clickchem": "[*]S(=O)(=O)-[$(N=[N+]=[N-]),$([N-][N+]#N)]",
+    "Thio_Acid_clickchem": "[C]-[$([CX3R0]([S;H1,X1])=[OX1]),$([CX3R0]([O;H1,X1])=[SX1])]",
+    "Thiol_1R_clickchem": "[#6&$([CR0,R1X3,R1X4])&!$([#6](=,-[OR0,SR0])[SR0])]-[SR0;H1,-]"
+}

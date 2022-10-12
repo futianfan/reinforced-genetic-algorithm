@@ -1,0 +1,33 @@
+###################################################################################################################
+All ligands started from Retrieved on 12/19/19
+
+We retrieved ligands from the Zinc15 database.
+    The ligands retrieved were limited to:
+        1) commercially available (wait Ok or sooner)
+        2) MW less than or equal to 250Da
+        3) LogP less than or equal to 5.0
+        4) Any level of reactivity level. (ie Most reactive: Hot)
+
+    This resulted in 19,274,338 substances and 420 Tranches
+
+
+This list was further filtered to ensure that the SMILES could be converted to rdkit mol object
+and filtered with Lipinski Strict Filter.
+We populated the functional group libraries using this list.
+
+Compounds were sorted by molecular weight, 
+Libraries exceeding 5,000 ligands were further minimized taking only the lightest 5,000 compounds..
+We favored low molecular weight as AutoGrow tends to grow compounds.
+
+All compounds were tested to ensure they will react in all reactions they may be called in.
+
+###################################################################################################################
+The complementary molecule libraries used in robust_rxns and click_chem_rxns were copied to form the all_rxns complementary molecule library
+###################################################################################################################
+
+The resulting libraries (when removing redundancies) uses: 185,615
+
+The default fragment libraries included with AutoGrow were derived 
+from a subset of the ZINC database (https://zinc.docking.org/).
+We thank ZINC for allowing us to distribute these fragment 
+libraries to AutoGrow users.

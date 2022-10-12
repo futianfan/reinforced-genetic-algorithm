@@ -1,0 +1,61 @@
+The reactions used for the click_chem_rxns reaction set are based on those used in
+AutoClickChem, which were based on Click Chemistry reactions.
+
+All the reactions were converted from 3D format to 2D SMARTS reactions.
+
+Several modifications included:
+1) AutoClickChem would identify Carboxyl groups as alchohols and perform reactions on those moieties as if they were alcohols.
+    -This defect was removed. In the modern reactions Carboxyl groups ARE NOT CONSIDERED alcohols
+    -Similarly Thiol-Carboxyl (aka thiol_acid) groups are not considered alcohols/thiols. 
+2) AutoClickChem separated halides by acyl, alkyl, and aryl halides. 
+    -This made sense as the mechanism of reaction differs between these halides:
+        ie) 
+            Alcyl halide ---> azide   would be performed using a Nucleophilic Acyl Substitution
+                verses
+            Alkyl halide ---> azide   would be performed using a Sn1/Sn2 reactions
+
+                verses
+            Alkyl halide ---> azide   would be performed using a Nucleophilic Aryl Substitution (SnAr)
+
+
+
+            -details for both of these can be found:
+            https://www.masterorganicchemistry.com/2018/06/29/some-reactions-of-azides/ 
+        
+        If all R-groups, besides the halogen, that are bound to the central carbon are handled by dumby atom  [*]
+        the reactions for both types of halides are essentially the same:
+        [*][#6]-[Br] >> [*][#6]-N=[N+]=[N-]     # this is pseudo code version, infact the [*] is further simplified based on recursive SMARTS
+
+        SMARTS Reaction:
+        [Cl,Br,I:2][#6;H0X4,H0X3,H1X4,H1X3,H2X4,H3:1]>>[#6:1]-N=[N+]=[N-]"
+
+
+    This holds true for the following reactions:
+        - Halide to Cyanide
+        - Halide to Azide
+        - Halide + Thiol to Thiol
+        - Halide + Alcohol to Alcohol
+        - Halide + Amine to Amine
+
+    All these reactions can be performed with Acyl or Alkyl halides using either the Nucleophilic Acyl Substitution or Sn2 respectively.
+
+    We condensed all these reactions into a single set of 5 reactions which takes both types of halides. Please use the proper reaction for you starting ligand.
+
+3) AutoClickChem reacted any halide attached to an SP2 carbon as an acyl halide.
+    The modern version of still reacts aromatic and acyl halides but not vinyl halides
+        -vinyl halides are not good for substitution reactions
+
+
+
+
+Additional Notes:
+1) Acid Anhydrides were restricted to non-cyclic Anhydrides:
+    Cylcic anhydrides can react (ex silico) in these reactions but are not compatible with the current 
+    version of the reaction SMARTS. This is because these reactions would break rings but not break 
+    the molecule graph in the reaction. Cyclic breaks are difficult in SMARTS reaction notation.
+    
+    This is not a modifications as AutoClickChem and AutoGrow 3 also excluded cyclic acid anhydrides
+    from these reactions. 
+
+
+    

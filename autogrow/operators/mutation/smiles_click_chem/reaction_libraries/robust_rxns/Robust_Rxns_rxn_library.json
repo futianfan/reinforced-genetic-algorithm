@@ -1,0 +1,582 @@
+{
+    "1_Pictet_Spengler": {
+        "reaction_name": "1_Pictet_Spengler", 
+        "example_rxn_product": "CC1NCCc2ccccc21", 
+        "example_rxn_reactants": ["c1cc(CCN)ccc1", "CC(=O)"],
+        "functional_groups": ["beta_arylethylamine_robust", "aldehyde_robust"],
+        "group_smarts": ["[c&H1]1:c(-[C&H2]-[C&H2]-[N&H2]):c:c:c:c:1", "[#6]-[C&H1&R0]=[O&D1]"],
+        "num_reactants": 2, 
+        "reaction_string": "[cH1:1]1:[c:2](-[CH2:7]-[CH2:8]-[NH2:9]):[c:3]:[c:4]:[c:5]:[c:6]:1.[#6:11]-[CH1;R0:10]=[OD1]>>[c:1]12:[c:2](-[CH2:7]-[CH2:8]-[NH1:9]-[C:10]-2(-[#6:11])):[c:3]:[c:4]:[c:5]:[c:6]:1", 
+        "RXN_NUM": 1
+        },
+    "2_benzimidazole_derivatives_carboxylic_acid_ester": {
+        "reaction_name": "2_benzimidazole_derivatives_carboxylic_acid_ester", 
+        "example_rxn_product": "Cc1n~c2ccccc2n1C", 
+        "example_rxn_reactants": ["c1c(NC)c(N)ccc1", "OC(=O)C"],
+        "functional_groups": ["ortho_phenylenediamine_robust", "carboxylic_acid_or_ester_robust"],
+        "group_smarts": ["[c&r6](-[N&H1&$(N-[#6])]):[c&r6]-[N&H2]", "[#6]-[C&R0](=[O&D1])-[#8;H1,$(O-[C&H3])]"],
+        "num_reactants": 2, 
+        "reaction_string": "[c;r6:1](-[NH1;$(N-[#6]):2]):[c;r6:3](-[NH2:4]).[#6:6]-[C;R0:5](=[OD1])-[#8;H1,$(O-[CH3])]>>[c:3]2:[c:1]:[n:2]:[c:5](-[#6:6]):[n:4]@2", 
+        "RXN_NUM": 2
+        },
+    "3_benzimidazole_derivatives_aldehyde": {
+        "reaction_name": "3_benzimidazole_derivatives_aldehyde", 
+        "example_rxn_product": "Cc1n~c2ccccc2n1C", 
+        "example_rxn_reactants": ["c1c(NC)c(N)ccc1", "CC(=O)"],
+        "functional_groups": ["ortho_phenylenediamine_robust", "aldehyde_robust"],
+        "group_smarts": ["[c&r6](-[N&H1&$(N-[#6])]):[c&r6]-[N&H2]", "[#6]-[C&H1&R0]=[O&D1]"],
+        "num_reactants": 2, 
+        "reaction_string": "[c;r6:1](-[NH1;$(N-[#6]):2]):[c;r6:3](-[NH2:4]).[#6:6]-[CH1;R0:5](=[OD1])>>[c:3]2:[c:1]:[n:2]:[c:5](-[#6:6]):[n:4]@2", 
+        "RXN_NUM": 3
+        },
+    "4_benzothiazole": {
+        "reaction_name": "4_benzothiazole", 
+        "example_rxn_product": "Cc1n~c2ccccc2s1", 
+        "example_rxn_reactants": ["c1c(S)c(N)ccc1", "CC(=O)"],
+        "functional_groups": ["ortho_aminothiophenol_robust", "aldehyde_robust"],
+        "group_smarts": ["[c&r6](-[S&H1]):[c&r6]-[N&H2]", "[#6]-[C&H1&R0]=[O&D1]"],
+        "num_reactants": 2, 
+        "reaction_string": "[c;r6:1](-[SH1:2]):[c;r6:3](-[NH2:4]).[#6:6]-[CH1;R0:5](=[OD1])>>[c:3]2:[c:1]:[s:2]:[c:5](-[#6:6]):[n:4]@2", 
+        "RXN_NUM": 4
+        },
+    "5_benzoxazole_arom_aldehyde": {
+        "reaction_name": "5_benzoxazole_arom_aldehyde", 
+        "example_rxn_product": "c1ccc(-c2n~c3ccccc3o2)cc1", 
+        "example_rxn_reactants": ["c1cc(O)c(N)cc1", "c1ccccc1C(=O)"],
+        "functional_groups": ["ortho_aminophenol_robust", "aryl_aldehyde_robust"],
+        "group_smarts": ["c(-[O&H1&$(Oc1ccccc1)]):[c&r6]-[N&H2]", "c-[C&H1&R0]=[O&D1]"],
+        "num_reactants": 2, 
+        "reaction_string": "[c:1](-[OH1;$(Oc1ccccc1):2]):[c;r6:3](-[NH2:4]).[c:6]-[CH1;R0:5](=[OD1])>>[c:3]2:[c:1]:[o:2]:[c:5](-[c:6]):[n:4]@2", 
+        "RXN_NUM": 5
+        },
+    "6_benzoxazole_carboxylic_acid": {
+        "reaction_name": "6_benzoxazole_carboxylic_acid", 
+        "example_rxn_product": "Cc1n~c2ccccc2o1", 
+        "example_rxn_reactants": ["c1cc(O)c(N)cc1", "CC(=O)O"],
+        "functional_groups": ["ortho_1amine_2alcohol_arylcyclic_robust", "carboxylic_acid_robust"],
+        "group_smarts": ["[c&r6](-[O&H1]):[c&r6]-[N&H2]", "[#6]-[C&R0](=[O&D1])-[O&H1]"],
+        "num_reactants": 2, 
+        "reaction_string": "[c;r6:1](-[OH1:2]):[c;r6:3](-[NH2:4]).[#6:6]-[C;R0:5](=[OD1])-[OH1]>>[c:3]2:[c:1]:[o:2]:[c:5](-[#6:6]):[n:4]@2", 
+        "RXN_NUM": 6
+        },
+    "7_thiazole": {
+        "reaction_name": "7_thiazole", 
+        "example_rxn_product": "Cc1nc(C)c(C)s1", 
+        "example_rxn_reactants": ["CC(=O)C(I)C", "NC(=S)C"],
+        "functional_groups": ["haloketone_robust", "thioamide_robust"],
+        "group_smarts": ["[#6]-[C&R0](=[O&D1])-[C&H1&R0](-[#6])-[*;#17,#35,#53]", "[$([N&H2]-[C]=[S&D1,O&D1]),$([N&H1]=[C]-[SH1,OH1])]"],
+        "num_reactants": 2, 
+        "reaction_string": "[#6:6]-[C;R0:1](=[OD1])-[CH1;R0:5](-[#6:7])-[*;#17,#35,#53].[$([N&H2:2]-[C:3]([*:6])=[S&D1,O&D1:4]),$([N&H1:2]=[C:3]([*:6])-[SH1,OH1:4])]>>[c:1]2(-[#6:6]):[n:2]:[c:3]([*:6]):[s:4][c:5]([#6:7]):2", 
+        "RXN_NUM": 7
+        },
+    "8_Niementowski_quinazoline": {
+        "reaction_name": "8_Niementowski_quinazoline", 
+        "example_rxn_product": "O=C1NC=Nc2ccccc21", 
+        "example_rxn_reactants": ["c1c(C(=O)O)c(N)ccc1", "C(=O)N"],
+        "functional_groups": ["anthranilic_acid_robust", "amide_robust"],
+        "group_smarts": ["c(-[C&$(C-c1ccccc1)](=[O&D1])-[O&H1]):c-[N&H2]", "[N&!H0&!$(N-N)&!$(N-C=N)&!$(N(-C=O)-C=O)]-[C;H1,$(C-[#6])]=[O&D1]"],
+        "num_reactants": 2, 
+        "reaction_string": "[c:1](-[C;$(C-c1ccccc1):2](=[OD1:3])-[OH1]):[c:4](-[NH2:5]).[N;!H0;!$(N-N);!$(N-C=N);!$(N(-C=O)-C=O):6]-[C;H1,$(C-[#6]):7]=[OD1]>>[c:4]2:[c:1]-[C:2](=[O:3])-[N:6]-[C:7]=[N:5]-2", 
+        "RXN_NUM": 8
+        },
+    "9_tetrazole_terminal": {
+        "reaction_name": "9_tetrazole_terminal", 
+        "example_rxn_product": "CC1=NNN=N1", 
+        "example_rxn_reactants": ["CC#N"],
+        "functional_groups": ["nitrile_type_1_robust"],
+        "group_smarts": ["[C&H0&$(C-[#6])]#[N&H0]"],
+        "num_reactants": 1, 
+        "reaction_string": "[CH0;$(C-[#6]):1]#[NH0:2]>>[C:1]1=[N:2]-N-N=N-1", 
+        "RXN_NUM": 9
+        },
+    "10_tetrazole_connect_regioisomere_1": {
+        "reaction_name": "10_tetrazole_connect_regioisomere_1", 
+        "example_rxn_product": "CC1=NN(C)N=N1", 
+        "example_rxn_reactants": ["CC#N", "CBr"],
+        "functional_groups": ["nitrile_type_1_robust", "alkyl_halogen_robust"],
+        "group_smarts": ["[C&H0&$(C-[#6])]#[N&H0]", "[C&A&!$(C=O)]-[*;#17,#35,#53]"],
+        "num_reactants": 2, 
+        "reaction_string": "[CH0;$(C-[#6]):1]#[NH0:2].[C;A;!$(C=O):3]-[*;#17,#35,#53]>>[C:1]1=[N:2]-N(-[C:3])-N=N-1", 
+        "RXN_NUM": 10
+        },
+    "11_tetrazole_connect_regioisomere_2": {
+        "reaction_name": "11_tetrazole_connect_regioisomere_2", 
+        "example_rxn_product": "CC1=NN=NN1C", 
+        "example_rxn_reactants": ["CC#N", "CBr"],
+        "functional_groups": ["nitrile_type_1_robust", "alkyl_halogen_robust"],
+        "group_smarts": ["[C&H0&$(C-[#6])]#[N&H0]", "[C&A&!$(C=O)]-[*;#17,#35,#53]"],
+        "num_reactants": 2, 
+        "reaction_string": "[CH0;$(C-[#6]):1]#[NH0:2].[C;A;!$(C=O):3]-[*;#17,#35,#53]>>[C:1]1=[N:2]-N=N-N-1(-[C:3])", 
+        "RXN_NUM": 11
+        },
+    "12_Huisgen_Cu_catalyzed_1_4_subst": {
+        "reaction_name": "12_Huisgen_Cu_catalyzed_1_4_subst", 
+        "example_rxn_product": "CCN1C=C(C)N=N1", 
+        "example_rxn_reactants": ["CC#C", "CCBr"],
+        "functional_groups": ["aliphatic_alkyne_robust", "alkyl_halogen_or_alcohol_robust"],
+        "group_smarts": ["[C&H0&$(C-[#6])]#[C&H1]", "[C;H1,H2;A;!$(C=O)]-[*;#17,#35,#53,O&H1]"],
+        "num_reactants": 2, 
+        "reaction_string": "[CH0;$(C-[#6]):1]#[CH1:2].[C;H1,H2;A;!$(C=O):3]-[*;#17,#35,#53,OH1]>>[C:1]1=[C:2]-N(-[C:3])-N=N-1", 
+        "RXN_NUM": 12
+        },
+    "13_Huisgen_Ru_catalyzed_1_5_subst": {
+        "reaction_name": "13_Huisgen_Ru_catalyzed_1_5_subst", 
+        "example_rxn_product": "CCN1N=NC=C1C", 
+        "example_rxn_reactants": ["CC#C", "CCBr"],
+        "functional_groups": ["aliphatic_alkyne_robust", "alkyl_halogen_or_alcohol_robust"],
+        "group_smarts": ["[C&H0&$(C-[#6])]#[C&H1]", "[C;H1,H2;A;!$(C=O)]-[*;#17,#35,#53,O&H1]"],
+        "num_reactants": 2, 
+        "reaction_string": "[CH0;$(C-[#6]):1]#[CH1:2].[C;H1,H2;A;!$(C=O):3]-[*;#17,#35,#53,OH1]>>[C:1]1=[C:2]-N=NN(-[C:3])-1", 
+        "RXN_NUM": 13
+        },
+    "14_Huisgen_disubst_alkyne": {
+        "reaction_name": "14_Huisgen_disubst_alkyne", 
+        "example_rxn_product": "CCN1N=NC(C)=C1C", 
+        "example_rxn_reactants": ["CC#CC", "CCBr"],
+        "functional_groups": ["aliphatic_alkyne_w_aro_alkyl_group_robust", "alkyl_halogen_or_alcohol_robust"],
+        "group_smarts": ["[C&H0&$(C-[#6])]#[C&H0&$(C-[#6])]", "[C;H1,H2;A;!$(C=O)]-[*;#17,#35,#53,O&H1]"],
+        "num_reactants": 2, 
+        "reaction_string": "[CH0;$(C-[#6]):1]#[CH0;$(C-[#6]):2].[C;H1,H2;A;!$(C=O):3]-[*;#17,#35,#53,OH1]>>[C:1]1=[C:2]-N=NN(-[C:3])-1", 
+        "RXN_NUM": 14
+        },
+    "15_1_2_4_triazole_acetohydrazide": {
+        "reaction_name": "15_1_2_4_triazole_acetohydrazide", 
+        "example_rxn_product": "CC1=NNC(C)=N1", 
+        "example_rxn_reactants": ["CC#N", "NNC(=O)C"],
+        "functional_groups": ["nitrile_type_1_robust", "acetohydrazide_robust"],
+        "group_smarts": ["[C&H0&$(C-[#6])]#[N&H0]", "[N&H2]-[N&H1]-[C&H0&$(C-[#6])&R0]=[O&D1]"],
+        "num_reactants": 2, 
+        "reaction_string": "[CH0;$(C-[#6]):1]#[NH0:2].[NH2:3]-[NH1:4]-[CH0;$(C-[#6]);R0:5]=[OD1]>>[N:2]1-[C:1]=[N:3]-[N:4]-[C:5]=1", 
+        "RXN_NUM": 15
+        },
+    "16_1_2_4_triazole_carboxylic_acid_ester": {
+        "reaction_name": "16_1_2_4_triazole_carboxylic_acid_ester", 
+        "example_rxn_product": "CC1=NNC(C)=N1", 
+        "example_rxn_reactants": ["CC#N", "OC(=O)C"],
+        "functional_groups": ["nitrile_type_1_robust", "carboxylic_acid_or_extended_esters_robust"],
+        "group_smarts": ["[C&H0&$(C-[#6])]#[N&H0]", "[C&H0&$(C-[#6])&R0](=[O&D1])-[#8;H1,$(O-[C&H3]),$(O-[C&H2]-[C&H3])]"],
+        "num_reactants": 2, 
+        "reaction_string": "[CH0;$(C-[#6]):1]#[NH0:2].[CH0;$(C-[#6]);R0:5](=[OD1])-[#8;H1,$(O-[CH3]),$(O-[CH2]-[CH3])]>>[N:2]1-[C:1]=N-N-[C:5]=1", 
+        "RXN_NUM": 16
+        },
+    "17_3_nitrile_pyridine": {
+        "reaction_name": "17_3_nitrile_pyridine", 
+        "example_rxn_product": "Cc1cc(C)c(C#N)c(O)n1", 
+        "example_rxn_reactants": ["CC(=O)CC(=O)C"],
+        "functional_groups": ["beta_dicarbonyl_robust"],
+        "group_smarts": ["[#6&!$([#6](-C=O)-C=O)]-[C&H0](=[O&D1])-[C;H1&!$(C-[*&!#6])&!$(C-C(=O)O),H2]-[C&H0&R0](=[O&D1])-[#6&!$([#6](-C=O)-C=O)]"],
+        "num_reactants": 1, 
+        "reaction_string": "[#6;!$([#6](-C=O)-C=O):4]-[CH0:1](=[OD1])-[C;H1&!$(C-[*;!#6])&!$(C-C(=O)O),H2:2]-[CH0;R0:3](=[OD1])-[#6;!$([#6](-C=O)-C=O):5]>>[c:1]1(-[#6:4]):[c:2]:[c:3](-[#6:5]):n:c(-O):c(-C#N):1", 
+        "RXN_NUM": 17
+        },
+    "18_spiro_chromanone": {
+        "reaction_name": "18_spiro_chromanone", 
+        "example_rxn_product": "O=C1CC2(CCNCC2)Oc2ccccc21", 
+        "example_rxn_reactants": ["c1cc(C(=O)C)c(O)cc1", "C1(=O)CCNCC1"],
+        "functional_groups": ["2_acetylphenol_robust", "cyclohexanone_robust"],
+        "group_smarts": ["c(-[C&$(C-c1ccccc1)](=[O&D1])-[C&H3]):c-[O&H1]", "[C&$(C1-[C&H2]-[C&H2]-[N,C]-[C&H2]-[C&H2]-1)]=[O&D1]"],
+        "num_reactants": 2, 
+        "reaction_string": "[c:1](-[C;$(C-c1ccccc1):2](=[OD1:3])-[CH3:4]):[c:5](-[OH1:6]).[C;$(C1-[CH2]-[CH2]-[N,C]-[CH2]-[CH2]-1):7](=[OD1])>>[O:6]1-[c:5]:[c:1]-[C:2](=[OD1:3])-[C:4]-[C:7]-1", 
+        "RXN_NUM": 18
+        },
+    "19_pyrazole": {
+        "reaction_name": "19_pyrazole", 
+        "example_rxn_product": "CC1=CC(C)=NN1C", 
+        "example_rxn_reactants": ["CC(=O)CC(=O)C", "NNC"],
+        "functional_groups": ["beta_dicarbonyl_robust", "hydrazine_robust"],
+        "group_smarts": ["[#6&!$([#6](-C=O)-C=O)]-[C&H0](=[O&D1])-[C;H1&!$(C-[*&!#6])&!$(C-C(=O)O),H2]-[C&H0&R0](=[O&D1])-[#6&!$([#6](-C=O)-C=O)]", "[N&H2]-[N&!H0;$(N-[#6]),H2]"],
+        "num_reactants": 2, 
+        "reaction_string": "[#6;!$([#6](-C=O)-C=O):4]-[CH0:1](=[OD1])-[C;H1&!$(C-[*;!#6])&!$(C-C(=O)O),H2:2]-[CH0;R0:3](=[OD1])-[#6;!$([#6](-C=O)-C=O):5].[NH2:6]-[N;!H0;$(N-[#6]),H2:7]>>[C:1]1(-[#6:4])-[C:2]=[C:3](-[#6:5])-[N:7]-[N:6]=1", 
+        "RXN_NUM": 19
+        },
+    "20_phthalazinone": {
+        "reaction_name": "20_phthalazinone", 
+        "example_rxn_product": "CC1=NN(C)C(=O)c2ccccc21", 
+        "example_rxn_reactants": ["c1cc(C(=O)O)c(C(=O)C)cc1", "NNC"],
+        "functional_groups": ["phthalazinone_precursor_robust", "restricted_hydrazine_robust"],
+        "group_smarts": ["[c&r6](-[C&$(C=O)]-[O&H1]):[c&r6]-[C;H1,$(C-C)]=[O&D1]", "[N&H2]-[N&H1&$(N-[#6])&!$(NC=[O,S,N])]"],
+        "num_reactants": 2, 
+        "reaction_string": "[c;r6:1](-[C;$(C=O):6]-[OH1]):[c;r6:2]-[C;H1,$(C-C):3]=[OD1].[NH2:4]-[NH1;$(N-[#6]);!$(NC=[O,S,N]):5]>>[c:1]1:[c:2]-[C:3]=[N:4]-[N:5]-[C:6]-1", 
+        "RXN_NUM": 20
+        },
+    "21_Paal_Knorr_pyrrole": {
+        "reaction_name": "21_Paal_Knorr_pyrrole", 
+        "example_rxn_product": "CC1=CC=C(C)N1C", 
+        "example_rxn_reactants": ["CC(=O)CCC(=O)C", "NC"],
+        "functional_groups": ["1_4_dione_robust", "primary_amine_robust"],
+        "group_smarts": ["[#6]-[C&R0](=[O&D1])-[C;H1,H2]-[C;H1,H2]-C(=[O&D1])-[#6]", "[N&H2&$(N-[C,N])&!$(NC=[O,S,N])&!$(N(-,:[#6])[#6])&!$(N~N~N)]"],
+        "num_reactants": 2, 
+        "reaction_string": "[#6:5]-[C;R0:1](=[OD1])-[C;H1,H2:2]-[C;H1,H2:3]-[C:4](=[OD1])-[#6:6].[NH2;$(N-[C,N]);!$(NC=[O,S,N]);!$(N([#6])[#6]);!$(N~N~N):7]>>[C:1]1(-[#6:5])=[C:2]-[C:3]=[C:4](-[#6:6])-[N:7]-1", 
+        "RXN_NUM": 21
+        },
+    "22_triaryl_imidazole": {
+        "reaction_name": "22_triaryl_imidazole", 
+        "example_rxn_product": "c1ccc(C2=NC(c3ccccc3)=C(c3ccccc3)N2)cc1", 
+        "example_rxn_reactants": ["c1ccccc1C(=O)C(=O)c1ccccc1", "c1ccccc1C(=O)"],
+        "functional_groups": ["benzil_or_benzoin_robust", "aryl_aldehyde_robust"],
+        "group_smarts": ["[C&$(C-c1ccccc1)](=[O&D1])-[C&D3&$(C-c1ccccc1)]~[O;D1,H1]", "c-[C&H1&R0]=[O&D1]"],
+        "num_reactants": 2, 
+        "reaction_string": "[C;$(C-c1ccccc1):1](=[OD1])-[C;D3;$(C-c1ccccc1):2]~[O;D1,H1].[CH1;$(C-c):3]=[OD1]>>[C:1]1-N=[C:3]-[NH1]-[C:2]=1", 
+        "RXN_NUM": 22
+        },
+    "23_Fischer_indole": {
+        "reaction_name": "23_Fischer_indole", 
+        "example_rxn_product": "CC1=C(C)c2ccccc2N1", 
+        "example_rxn_reactants": ["c1ccccc1NN", "CCC(=O)C"],
+        "functional_groups": ["phenylhydrazine_robust", "ketone_robust"],
+        "group_smarts": ["[N&H1&$(N-c1ccccc1)](-[N&H2])-c:[c&H1]", "[C&$(C(-,:[#6])[#6])](=[O&D1])-[C&H2&$(C(-,:[#6])[#6])&!$(C(-,:C=O)C=O)]"],
+        "num_reactants": 2, 
+        "reaction_string": "[NH1;$(N-c1ccccc1):1](-[NH2])-[c:5]:[cH1:4].[C;$(C([#6])[#6]):2](=[OD1])-[CH2;$(C([#6])[#6]);!$(C(C=O)C=O):3]>>[C:5]1-[N:1]-[C:2]=[C:3]-[C:4]:1", 
+        "RXN_NUM": 23
+        },
+    "24_Friedlaender_chinoline": {
+        "reaction_name": "24_Friedlaender_chinoline", 
+        "example_rxn_product": "CC1=Cc2ccccc2-nc1C", 
+        "example_rxn_reactants": ["c1cccc(C=O)c1N", "CCC(=O)C"],
+        "functional_groups": ["ortho_aminobenzaldehyde_robust", "ketone_robust"],
+        "group_smarts": ["[N&H2&$(N-c1ccccc1)]-c:c-[C&H1]=[O&D1]", "[C&$(C(-,:[#6])[#6])](=[O&D1])-[C&H2&$(C(-,:[#6])[#6])&!$(C(-,:C=O)C=O)]"],
+        "num_reactants": 2, 
+        "reaction_string": "[NH2;$(N-c1ccccc1):1]-[c:2]:[c:3]-[CH1:4]=[OD1].[C;$(C([#6])[#6]):6](=[OD1])-[CH2;$(C([#6])[#6]);!$(C(C=O)C=O):5]>>[N:1]1-[c:2]:[c:3]-[C:4]=[C:5]-[C:6]:1", 
+        "RXN_NUM": 24
+        },
+    "25_benzofuran": {
+        "reaction_name": "25_benzofuran", 
+        "example_rxn_product": "CC1=Cc2ccccc2O1", 
+        "example_rxn_reactants": ["c1cc(I)c(O)cc1", "CC#C"],
+        "functional_groups": ["ortho_halo_phenol_robust", "alkyne_robust"],
+        "group_smarts": ["[*;Br,I;$(*c1ccccc1)]-c:c-[O&H1]", "[C&H1]#[C&$(C-[#6])]"],
+        "num_reactants": 2, 
+        "reaction_string": "[*;Br,I;$(*c1ccccc1)]-[c:1]:[c:2]-[OH1:3].[CH1:5]#[C;$(C-[#6]):4]>>[c:1]1:[c:2]-[O:3]-[C:4]=[C:5]-1", 
+        "RXN_NUM": 25
+        },
+    "26_benzothiophene": {
+        "reaction_name": "26_benzothiophene", 
+        "example_rxn_product": "CC1=Cc2ccccc2S1", 
+        "example_rxn_reactants": ["c1cc(I)c(SC)cc1", "CC#C"],
+        "functional_groups": ["aminobenzenethiol_robust", "alkyne_robust"],
+        "group_smarts": ["[*;Br,I;$(*c1ccccc1)]-c:c-[S&D2]-[C&H3]", "[C&H1]#[C&$(C-[#6])]"],
+        "num_reactants": 2, 
+        "reaction_string": "[*;Br,I;$(*c1ccccc1)]-[c:1]:[c:2]-[SD2:3]-[CH3].[CH1:5]#[C;$(C-[#6]):4]>>[c:1]1:[c:2]-[S:3]-[C:4]=[C:5]-1", 
+        "RXN_NUM": 26
+        },
+    "27_indole": {
+        "reaction_name": "27_indole", 
+        "example_rxn_product": "CC1=Cc2ccccc2N1", 
+        "example_rxn_reactants": ["c1cc(I)c(N)cc1", "CC#C"],
+        "functional_groups": ["ortho_halo_thioanizole_robust", "alkyne_robust"],
+        "group_smarts": ["[*;Br,I;$(*c1ccccc1)]-c:c-[N&H2]", "[C&H1]#[C&$(C-[#6])]"],
+        "num_reactants": 2, 
+        "reaction_string": "[*;Br,I;$(*c1ccccc1)]-[c:1]:[c:2]-[NH2:3].[CH1:5]#[C;$(C-[#6]):4]>>[c:1]1:[c:2]-[N:3]-[C:4]=[C:5]-1", 
+        "RXN_NUM": 27
+        },
+    "28_oxadiazole": {
+        "reaction_name": "28_oxadiazole", 
+        "example_rxn_product": "Cc1noc(C)n1", 
+        "example_rxn_reactants": ["CC#N", "CC(=O)O"],
+        "functional_groups": ["nitrile_type_2_robust", "carboxylic_acid_robust"],
+        "group_smarts": ["[#6][C]#[#7;D1]", "[#6]-[C&R0](=[O&D1])-[O&H1]"],
+        "num_reactants": 2, 
+        "reaction_string": "[#6:6][C:5]#[#7;D1:4].[#6:1][C:2](=[OD1:3])[OH1]>>[#6:6][c:5]1[n:4][o:3][c:2]([#6:1])n1", 
+        "RXN_NUM": 28
+        },
+    "29_Williamson_ether": {
+        "reaction_name": "29_Williamson_ether", 
+        "example_rxn_product": "CCOCC", 
+        "example_rxn_reactants": ["CCO", "CCBr"],
+        "functional_groups": ["alcohol_robust", "alkyl_halide_robust"],
+        "group_smarts": ["[#6&$([#6]~[#6])&!$([#6]=O)][#8&H1]", "[Cl,Br,I][#6&H2&$([#6]~[#6])]"],
+        "num_reactants": 2, 
+        "reaction_string": "[#6;$([#6]~[#6]);!$([#6]=O):2][#8;H1:3].[Cl,Br,I][#6;H2;$([#6]~[#6]):4]>>[CH2:4][O:3][#6:2]", 
+        "RXN_NUM": 29
+        },
+    "30_reductive_amination": {
+        "reaction_name": "30_reductive_amination", 
+        "example_rxn_product": "CCNC", 
+        "example_rxn_reactants": ["CC(=O)", "NC"],
+        "functional_groups": ["aldehyde_or_ketone_robust", "primary_or_secondary_amine_type_1_robust"],
+        "group_smarts": ["[#6]-[C;H1,$([C&H0](-[#6])[#6])]=[O&D1]", "[N;H2,$([NH1;D2](C)C);!$(N-[#6]=[*])]-[C]"],
+        "num_reactants": 2, 
+        "reaction_string": "[#6:4]-[C;H1,$([CH0](-[#6])[#6]):1]=[OD1].[N;H2,$([NH1;D2](C)C);!$(N-[#6]=[*]):3]-[C:5]>>[#6:4][C:1]-[N:3]-[C:5]", 
+        "RXN_NUM": 30
+        },
+    "31_Suzuki": {
+        "reaction_name": "31_Suzuki", 
+        "example_rxn_product": "c1ccc(-c2ccccc2)cc1", 
+        "example_rxn_reactants": ["c1ccccc1B(O)O", "c1ccccc1Br"],
+        "functional_groups": ["boronic_acid_robust", "aryl_halide_type_1_robust"],
+        "group_smarts": ["[#6&H0&D3&$([#6](~[#6])~[#6])]B(-,:O)O", "[#6&H0&D3&$([#6](~[#6])~[#6])][Cl,Br,I]"],
+        "num_reactants": 2, 
+        "reaction_string": "[#6;H0;D3;$([#6](~[#6])~[#6]):1]B(O)O.[#6;H0;D3;$([#6](~[#6])~[#6]):2][Cl,Br,I]>>[#6:2][#6:1]", 
+        "RXN_NUM": 31
+        },
+    "32_piperidine_indole": {
+        "reaction_name": "32_piperidine_indole", 
+        "example_rxn_product": "C1=C(c2c[nH]c3ccccc23)CCNC1", 
+        "example_rxn_reactants": ["c1cccc2c1C=CN2", "C1CC(=O)CCN1"],
+        "functional_groups": ["indole_robust", "4_piperidone_robust"],
+        "group_smarts": ["[c&H1]1:c:c:[c&H1]:c2:[n&H1]:c:[c&H1]:c:1:2", "O=C1[#6&H2][#6&H2][N][#6&H2][#6&H2]1"],
+        "num_reactants": 2, 
+        "reaction_string": "[c;H1:3]1:[c:4]:[c:5]:[c;H1:6]:[c:7]2:[nH:8]:[c:9]:[c;H1:1]:[c:2]:1:2.O=[C:10]1[#6;H2:11][#6;H2:12][N][#6;H2][#6;H2]1>>[#6;H2:12]3[#6;H1:11]=[C:10]([c:1]1:[c:9]:[n:8]:[c:7]2:[c:6]:[c:5]:[c:4]:[c:3]:[c:2]:1:2)[#6;H2:15][#6;H2:14][N:13]3", 
+        "RXN_NUM": 32
+        },
+    "33_Negishi": {
+        "reaction_name": "33_Negishi", 
+        "example_rxn_product": "CCCC", 
+        "example_rxn_reactants": ["CCBr", "CCBr"],
+        "functional_groups": ["halide_type_3_robust", "halide_type_3_robust"],
+        "group_smarts": ["[#6&$([#6]~[#6])&!$([#6]~[S,N,O,P])][Cl,Br,I]", "[#6&$([#6]~[#6])&!$([#6]~[S,N,O,P])][Cl,Br,I]"],
+        "num_reactants": 2, 
+        "reaction_string": "[#6;$([#6]~[#6]);!$([#6]~[S,N,O,P]):1][Cl,Br,I].[Cl,Br,I][#6;$([#6]~[#6]);!$([#6]~[S,N,O,P]):2]>>[#6:2][#6:1]", 
+        "RXN_NUM": 33
+        },
+    "34_Mitsunobu_imide": {
+        "reaction_name": "34_Mitsunobu_imide", 
+        "example_rxn_product": "CC(=O)N(C(C)=O)C(C)C", 
+        "example_rxn_reactants": ["CC(O)C", "CC(=O)NC(=O)C"],
+        "functional_groups": ["primary_or_secondary_alcohol_robust", "imide_robust"],
+        "group_smarts": ["[C;H1&$(C(-,:[#6])[#6]),H2&$(C[#6])][O&H1]", "[N&H1&$(N(-,:C=O)C=O)]"],
+        "num_reactants": 2, 
+        "reaction_string": "[C;H1&$(C([#6])[#6]),H2&$(C[#6]):1][OH1].[NH1;$(N(C=O)C=O):2]>>[C:1][N:2]", 
+        "RXN_NUM": 34
+        },
+    "35_Mitsunobu_phenole": {
+        "reaction_name": "35_Mitsunobu_phenole", 
+        "example_rxn_product": "CC(C)Oc1ccccc1", 
+        "example_rxn_reactants": ["CC(O)C", "c1ccccc1O"],
+        "functional_groups": ["primary_or_secondary_alcohol_robust", "phenole_robust"],
+        "group_smarts": ["[C;H1&$(C(-,:[#6])[#6]),H2&$(C[#6])][O&H1]", "[O&H1&$(Oc1ccccc1)]"],
+        "num_reactants": 2, 
+        "reaction_string": "[C;H1&$(C([#6])[#6]),H2&$(C[#6]):1][OH1].[OH1;$(Oc1ccccc1):2]>>[C:1][O:2]", 
+        "RXN_NUM": 35
+        },
+    "36_Mitsunobu_sulfonamide": {
+        "reaction_name": "36_Mitsunobu_sulfonamide", 
+        "example_rxn_product": "CC(C)N(C)S(C)(=O)=O", 
+        "example_rxn_reactants": ["CC(O)C", "CNS(=O)(=O)C"],
+        "functional_groups": ["primary_or_secondary_alcohol_robust", "sulfonamide_robust"],
+        "group_smarts": ["[C;H1&$(C(-,:[#6])[#6]),H2&$(C[#6])][O&H1]", "[N&H1&$(N(-,:[#6])S(=O)=O)]"],
+        "num_reactants": 2, 
+        "reaction_string": "[C;H1&$(C([#6])[#6]),H2&$(C[#6]):1][OH1].[NH1;$(N([#6])S(=O)=O):2]>>[C:1][N:2]", 
+        "RXN_NUM": 36
+        },
+    "37_Mitsunobu_tetrazole_1": {
+        "reaction_name": "37_Mitsunobu_tetrazole_1", 
+        "example_rxn_product": "CC(C)n1cnnn1", 
+        "example_rxn_reactants": ["CC(O)C", "N1=NNC=N1"],
+        "functional_groups": ["primary_or_secondary_alcohol_robust", "tetrazole_1_robust"],
+        "group_smarts": ["[C;H1&$(C(-,:[#6])[#6]),H2&$(C[#6])][O&H1]", "[#7&H1]1~[#7]~[#7]~[#7]~[#6]~1"],
+        "num_reactants": 2, 
+        "reaction_string": "[C;H1&$(C([#6])[#6]),H2&$(C[#6]):1][OH1].[#7H1:2]1~[#7:3]~[#7:4]~[#7:5]~[#6:6]~1>>[C:1][#7:2]1:[#7:3]:[#7:4]:[#7:5]:[#6:6]:1", 
+        "RXN_NUM": 37
+        },
+    "38_Mitsunobu_tetrazole_2": {
+        "reaction_name": "38_Mitsunobu_tetrazole_2", 
+        "example_rxn_product": "CC(C)n1ncnn1", 
+        "example_rxn_reactants": ["CC(O)C", "N1=NNC=N1"],
+        "functional_groups": ["primary_or_secondary_alcohol_robust", "tetrazole_1_robust"],
+        "group_smarts": ["[C;H1&$(C(-,:[#6])[#6]),H2&$(C[#6])][O&H1]", "[#7&H1]1~[#7]~[#7]~[#7]~[#6]~1"],
+        "num_reactants": 2, 
+        "reaction_string": "[C;H1&$(C([#6])[#6]),H2&$(C[#6]):1][OH1].[#7H1:2]1~[#7:3]~[#7:4]~[#7:5]~[#6:6]~1>>[#7H0:2]1:[#7:3]:[#7H0:4]([C:1]):[#7:5]:[#6:6]:1", 
+        "RXN_NUM": 38
+        },
+    "39_Mitsunobu_tetrazole_3": {
+        "reaction_name": "39_Mitsunobu_tetrazole_3", 
+        "example_rxn_product": "CC(C)n1cnnn1", 
+        "example_rxn_reactants": ["CC(O)C", "N1N=NC=N1"],
+        "functional_groups": ["primary_or_secondary_alcohol_robust", "tetrazole_2_robust"],
+        "group_smarts": ["[C;H1&$(C(-,:[#6])[#6]),H2&$(C[#6])][O&H1]", "[#7]1~[#7]~[#7&H1]~[#7]~[#6]~1"],
+        "num_reactants": 2, 
+        "reaction_string": "[C;H1&$(C([#6])[#6]),H2&$(C[#6]):1][OH1].[#7:2]1~[#7:3]~[#7H1:4]~[#7:5]~[#6:6]~1>>[C:1][#7H0:2]1:[#7:3]:[#7H0:4]:[#7:5]:[#6:6]:1", 
+        "RXN_NUM": 39
+        },
+    "40_Mitsunobu_tetrazole_4": {
+        "reaction_name": "40_Mitsunobu_tetrazole_4", 
+        "example_rxn_product": "CC(C)n1ncnn1", 
+        "example_rxn_reactants": ["CC(O)C", "N1N=NC=N1"],
+        "functional_groups": ["primary_or_secondary_alcohol_robust", "tetrazole_2_robust"],
+        "group_smarts": ["[C;H1&$(C(-,:[#6])[#6]),H2&$(C[#6])][O&H1]", "[#7]1~[#7]~[#7&H1]~[#7]~[#6]~1"],
+        "num_reactants": 2, 
+        "reaction_string": "[C;H1&$(C([#6])[#6]),H2&$(C[#6]):1][OH1].[#7:2]1~[#7:3]~[#7H1:4]~[#7:5]~[#6:6]~1>>[#7:2]1:[#7:3]:[#7:4]([C:1]):[#7:5]:[#6:6]:1", 
+        "RXN_NUM": 40
+        },
+    "41_Heck_terminal_vinyl": {
+        "reaction_name": "41_Heck_terminal_vinyl", 
+        "example_rxn_product": "C(=C/c1ccccc1)\\c1ccccc1", 
+        "example_rxn_reactants": ["c1ccccc1C=C", "c1ccccc1Br"],
+        "functional_groups": ["alkene_robust", "halide_type_2_robust"],
+        "group_smarts": ["[#6;c,$(C(=O)O),$(C#N)][#6&H1]=[#6&H2]", "[#6;$([#6]=[#6]),$(c:c)][Cl,Br,I]"],
+        "num_reactants": 2, 
+        "reaction_string": "[#6;c,$(C(=O)O),$(C#N):3][#6;H1:2]=[#6;H2:1].[#6;$([#6]=[#6]),$(c:c):4][Cl,Br,I]>>[#6:4]/[#6:1]=[#6:2]/[#6:3]", 
+        "RXN_NUM": 41
+        },
+    "42_Heck_non_terminal_vinyl": {
+        "reaction_name": "42_Heck_non_terminal_vinyl", 
+        "example_rxn_product": "CC(=C(C)c1ccccc1)c1ccccc1", 
+        "example_rxn_reactants": ["c1ccccc1C(C)=CC", "c1ccccc1Br"],
+        "functional_groups": ["terminal_alkene_robust", "halide_type_2_robust"],
+        "group_smarts": ["[#6;c,$(C(=O)O),$(C#N)][#6](-,:[#6])=[#6&H1&$([#6][#6])]", "[#6;$([#6]=[#6]),$(c:c)][Cl,Br,I]"],
+        "num_reactants": 2, 
+        "reaction_string": "[#6;c,$(C(=O)O),$(C#N):3][#6:2]([#6:5])=[#6;H1;$([#6][#6]):1].[#6;$([#6]=[#6]),$(c:c):4][Cl,Br,I]>>[#6:4][#6;H0:1]=[#6:2]([#6:5])[#6:3]", 
+        "RXN_NUM": 42
+        },
+    "43_Stille": {
+        "reaction_name": "43_Stille", 
+        "example_rxn_product": "c1ccc(-c2ccccc2)cc1", 
+        "example_rxn_reactants": ["c1ccccc1Br", "c1ccccc1Br"],
+        "functional_groups": ["aryl_or_vinyl_halide_robust", "aryl_halide_type_2_robust"],
+        "group_smarts": ["[#6;$(C=C-[#6]),$(c:c)][Br,I]", "[Cl,Br,I][c]"],
+        "num_reactants": 2, 
+        "reaction_string": "[#6;$(C=C-[#6]),$(c:c):1][Br,I].[Cl,Br,I][c:2]>>[c:2][#6:1]", 
+        "RXN_NUM": 43
+        },
+    "44_Grignard_carbonyl": {
+        "reaction_name": "44_Grignard_carbonyl", 
+        "example_rxn_product": "CCC(C)=O", 
+        "example_rxn_reactants": ["CC#N", "CCBr"],
+        "functional_groups": ["nitrile_type_2_robust", "halide_type_1_robust"],
+        "group_smarts": ["[#6][C]#[#7;D1]", "[Cl,Br,I][#6&$([#6]~[#6])&!$([#6](-,:[Cl,Br,I])[Cl,Br,I])&!$([#6]=O)]"],
+        "num_reactants": 2, 
+        "reaction_string": "[#6:1][C:2]#[#7;D1].[Cl,Br,I][#6;$([#6]~[#6]);!$([#6]([Cl,Br,I])[Cl,Br,I]);!$([#6]=O):3]>>[#6:1][C:2](=O)[#6:3]", 
+        "RXN_NUM": 44
+        },
+    "45_Grignard_alcohol": {
+        "reaction_name": "45_Grignard_alcohol", 
+        "example_rxn_product": "CCC(C)(C)O", 
+        "example_rxn_reactants": ["CC(=O)C", "CCBr"],
+        "functional_groups": ["aldehyde_or_ketone_restricted_robust", "halide_type_1_robust"],
+        "group_smarts": ["[#6][C;H1,$(C(-,:[#6])[#6])]=[O&D1]", "[Cl,Br,I][#6&$([#6]~[#6])&!$([#6](-,:[Cl,Br,I])[Cl,Br,I])&!$([#6]=O)]"],
+        "num_reactants": 2, 
+        "reaction_string": "[#6:1][C;H1,$([C]([#6])[#6]):2]=[OD1:3].[Cl,Br,I][#6;$([#6]~[#6]);!$([#6]([Cl,Br,I])[Cl,Br,I]);!$([#6]=O):4]>>[C:1][#6:2]([OH1:3])[#6:4]", 
+        "RXN_NUM": 45
+        },
+    "46_Sonogashira": {
+        "reaction_name": "46_Sonogashira", 
+        "example_rxn_product": "CC#Cc1ccccc1", 
+        "example_rxn_reactants": ["c1cc(Br)ccc1", "CC#C"],
+        "functional_groups": ["aryl_or_vinyl_halide_robust", "terminal_alkyne_robust"],
+        "group_smarts": ["[#6;$(C=C-[#6]),$(c:c)][Br,I]", "[C&H1&$(C#CC)]"],
+        "num_reactants": 2, 
+        "reaction_string": "[#6;$(C=C-[#6]),$(c:c):1][Br,I].[CH1;$(C#CC):2]>>[#6:1][C:2]", 
+        "RXN_NUM": 46
+        },
+    "47_Schotten_Baumann_amide": {
+        "reaction_name": "47_Schotten_Baumann_amide", 
+        "example_rxn_product": "CCNC(C)=O", 
+        "example_rxn_reactants": ["CC(=O)O", "NCC"],
+        "functional_groups": ["carboxylic_acid_robust", "primary_or_secondary_amine_C_aryl_alkyl_robust"],
+        "group_smarts": ["[#6]-[C&R0](=[O&D1])-[O&H1]", "[N&$(NC)&!$(N=*)&!$([N&-])&!$(N#*)&!$([N&D3])&!$([N&D4])&!$(N[O,N])&!$(N[C,S]=[S,O,N])]"],
+        "num_reactants": 2, 
+        "reaction_string": "[C;$(C=O):1][OH1].[N;$(N[#6]);!$(N=*);!$([N-]);!$(N#*);!$([ND3]);!$([ND4]);!$(N[O,N]);!$(N[C,S]=[S,O,N]):2]>>[C:1][N+0:2]", 
+        "RXN_NUM": 47
+        },
+    "48_sulfon_amide": {
+        "reaction_name": "48_sulfon_amide", 
+        "example_rxn_product": "CCNS(C)(=O)=O", 
+        "example_rxn_reactants": ["CS(=O)(=O)O", "NCC"],
+        "functional_groups": ["sulfonic_acid_robust", "primary_or_secondary_amine_type_2_robust"],
+        "group_smarts": ["[S&$(S(=O)(=O)[C,N])]O", "[N&$(NC)&!$(N=*)&!$([N&-])&!$(N#*)&!$([N&D3])&!$([N&D4])&!$(N[c,O])&!$(N[C,S]=[S,O,N])]"],
+        "num_reactants": 2, 
+        "reaction_string": "[S;$(S(=O)(=O)[C,N]):1][O].[N;$(NC);!$(N=*);!$([N-]);!$(N#*);!$([ND3]);!$([ND4]);!$(N[c,O]);!$(N[C,S]=[S,O,N]):2]>>[S:1][N+0:2]", 
+        "RXN_NUM": 48
+        },
+    "49_N_arylation_heterocycles": {
+        "reaction_name": "49_N_arylation_heterocycles", 
+        "example_rxn_product": "c1ccc(n2ccnc2)cc1", 
+        "example_rxn_reactants": ["c1ccccc1B(O)O", "N1C=NC=C1"],
+        "functional_groups": ["aryl_boronic_acid_robust", "5_mem_aryl_w_NH_max2N_robust"],
+        "group_smarts": ["cB(-,:O)O", "[n&H1&+0&r5&!$(n[#6]=[O,S,N])&!$(n~n~n)&!$(n~n~c~n)&!$(n~c~n~n)]"],
+        "num_reactants": 2, 
+        "reaction_string": "[c:1]B(O)O.[nH1;+0;r5;!$(n[#6]=[O,S,N]);!$(n~n~n);!$(n~n~c~n);!$(n~c~n~n):2]>>[c:1][n:2]", 
+        "RXN_NUM": 49
+        },
+    "50_Wittig": {
+        "reaction_name": "50_Wittig", 
+        "example_rxn_product": "CC=C(C)C", 
+        "example_rxn_reactants": ["CC(=O)C", "BrCC"],
+        "functional_groups": ["aldehyde_or_ketone_flexible_robust", "primary_or_secondary_halide_robust"],
+        "group_smarts": ["[#6]-[C;H1,$([C&H0](-[#6])[#6]);!$(CC=O)]=[O&D1]", "[Cl,Br,I][C&H2&$(C-[#6])&!$(CC[I,Br])&!$(CCO[C&H3])]"],
+        "num_reactants": 2, 
+        "reaction_string": "[#6:3]-[C;H1,$([CH0](-[#6])[#6]);!$(CC=O):1]=[OD1].[Cl,Br,I][C;H2;$(C-[#6]);!$(CC[I,Br]);!$(CCO[CH3]):2]>>[C:3][C:1]=[C:2]", 
+        "RXN_NUM": 50
+        },
+    "51_Buchwald_Hartwig": {
+        "reaction_name": "51_Buchwald_Hartwig", 
+        "example_rxn_product": "CN(C)c1ccccc1", 
+        "example_rxn_reactants": ["c1ccccc1Br", "CNC"],
+        "functional_groups": ["aryl_halide_nitrogen_optional_robust", "primary_or_secondary_amine_aro_optional_robust"],
+        "group_smarts": ["[Cl,Br,I][c&$(c1:[c,n]:[c,n]:[c,n]:[c,n]:[c,n]:1)]", "[N;$(NC)&!$(N=*)&!$([N&-])&!$(N#*)&!$([N&D3])&!$([N&D4])&!$(N[c,O])&!$(N[C,S]=[S,O,N]),H2&$(Nc1:[c,n]:[c,n]:[c,n]:[c,n]:[c,n]:1)]"],
+        "num_reactants": 2, 
+        "reaction_string": "[Cl,Br,I][c;$(c1:[c,n]:[c,n]:[c,n]:[c,n]:[c,n]:1):1].[N;$(NC)&!$(N=*)&!$([N-])&!$(N#*)&!$([ND3])&!$([ND4])&!$(N[c,O])&!$(N[C,S]=[S,O,N]),H2&$(Nc1:[c,n]:[c,n]:[c,n]:[c,n]:[c,n]:1):2]>>[c:1][N:2]", 
+        "RXN_NUM": 51
+        },
+    "52_imidazole": {
+        "reaction_name": "52_imidazole", 
+        "example_rxn_product": "CNC1=NC(C)=C(C)N1", 
+        "example_rxn_reactants": ["CC(=O)C(Br)C", "N=C(N)NC"],
+        "functional_groups": ["alpha_halo_ketone_robust", "amidine_robust"],
+        "group_smarts": ["[C&$(C(-,:[#6])[#6&!$([#6]Br)])](=[O&D1])[C&H1&$(C(-,:[#6])[#6])]Br", "[#7&H2][C&$(C(=N)(-,:N)[c,#7])]=[#7&H1&D1]"],
+        "num_reactants": 2, 
+        "reaction_string": "[C;$(C([#6])[#6;!$([#6]Br)]):4](=[OD1])[CH;$(C([#6])[#6]):5]Br.[#7;H2:3][C;$(C(=N)(N)[c,#7]):2]=[#7;H1;D1:1]>>[C:4]1=[CH0:5][NH:3][C:2]=[N:1]1", 
+        "RXN_NUM": 52
+        },
+    "53_decarboxylative_coupling": {
+        "reaction_name": "53_decarboxylative_coupling", 
+        "example_rxn_product": "O=[N+]([O-])c1ccccc1c1ccccc1", 
+        "example_rxn_reactants": ["c1c(C(=O)O)c([N+](=O)[O-])ccc1", "c1ccccc1Br"],
+        "functional_groups": ["aryl_carboxylic_acid_robust", "aryl_halide_flexible_robust"],
+        "group_smarts": ["[c&$(c1[c&$(c[C,S,N](=[O&D1])[*&R0])]cccc1)][C&$(C(=O)[O&H1])]", "[c&$(c1aaccc1)][Cl,Br,I]"],
+        "num_reactants": 2, 
+        "reaction_string": "[c;$(c1[c;$(c[C,S,N](=[OD1])[*;R0])]cccc1):1][C;$(C(=O)[O;H1])].[c;$(c1aaccc1):2][Cl,Br,I]>>[c:1][c:2]", 
+        "RXN_NUM": 53
+        },
+    "54_heteroaromatic_nuc_sub": {
+        "reaction_name": "54_heteroaromatic_nuc_sub", 
+        "example_rxn_product": "CNc1ccccn1", 
+        "example_rxn_reactants": ["c1cnc(F)cc1", "CN"],
+        "functional_groups": ["pyridine_pyrimidine_triazine_robust", "primary_or_secondary_amine_type_2_robust"],
+        "group_smarts": ["[c&!$(c1ccccc1)&$(c1[n,c]c[n,c]c[n,c]1)][Cl,F]", "[N&$(NC)&!$(N=*)&!$([N&-])&!$(N#*)&!$([N&D3])&!$([N&D4])&!$(N[c,O])&!$(N[C,S]=[S,O,N])]"],
+        "num_reactants": 2, 
+        "reaction_string": "[c;!$(c1ccccc1);$(c1[n,c]c[n,c]c[n,c]1):1][Cl,F].[N;$(NC);!$(N=*);!$([N-]);!$(N#*);!$([ND3]);!$([ND4]);!$(N[c,O]);!$(N[C,S]=[S,O,N]):2]>>[c:1][N:2]", 
+        "RXN_NUM": 54
+        },
+    "55_nucl_sub_aromatic_ortho_nitro": {
+        "reaction_name": "55_nucl_sub_aromatic_ortho_nitro", 
+        "example_rxn_product": "CNc1ccccc1[N+](=O)[O-]", 
+        "example_rxn_reactants": ["c1c([N+](=O)[O-])c(F)ccc1", "CN"],
+        "functional_groups": ["ortho_halo_nitrobenzene_robust", "primary_or_secondary_amine_type_2_robust"],
+        "group_smarts": ["[c&$(c1c(-,:N(~O)~O)cccc1)][Cl,F]", "[N&$(NC)&!$(N=*)&!$([N&-])&!$(N#*)&!$([N&D3])&!$([N&D4])&!$(N[c,O])&!$(N[C,S]=[S,O,N])]"],
+        "num_reactants": 2, 
+        "reaction_string": "[c;$(c1c(N(~O)~O)cccc1):1][Cl,F].[N;$(NC);!$(N=*);!$([N-]);!$(N#*);!$([ND3]);!$([ND4]);!$(N[c,O]);!$(N[C,S]=[S,O,N]):2]>>[c:1][N:2]", 
+        "RXN_NUM": 55
+        },
+    "56_nucl_sub_aromatic_para_nitro": {
+        "reaction_name": "56_nucl_sub_aromatic_para_nitro", 
+        "example_rxn_product": "CNc1ccc([N+](=O)[O-])cc1", 
+        "example_rxn_reactants": ["c1c(F)ccc([N+](=O)[O-])c1", "CN"],
+        "functional_groups": ["para_halo_nitrobenzene_robust", "primary_or_secondary_amine_type_2_robust"],
+        "group_smarts": ["[c&$(c1ccc(-,:N(~O)~O)cc1)][Cl,F]", "[N&$(NC)&!$(N=*)&!$([N&-])&!$(N#*)&!$([N&D3])&!$([N&D4])&!$(N[c,O])&!$(N[C,S]=[S,O,N])]"],
+        "num_reactants": 2, 
+        "reaction_string": "[c;$(c1ccc(N(~O)~O)cc1):1][Cl,F].[N;$(NC);!$(N=*);!$([N-]);!$(N#*);!$([ND3]);!$([ND4]);!$(N[c,O]);!$(N[C,S]=[S,O,N]):2]>>[c:1][N:2]", 
+        "RXN_NUM": 56
+        },
+    "57_urea": {
+        "reaction_name": "57_urea", 
+        "example_rxn_product": "CNC(=O)NC", 
+        "example_rxn_reactants": ["CN=C=O", "CN"],
+        "functional_groups": ["isocyanate_robust", "primary_or_secondary_amine_C_aryl_alkyl_robust"],
+        "group_smarts": ["[N&$(N-[#6])]=[C&$(C=O)]", "[N&$(NC)&!$(N=*)&!$([N&-])&!$(N#*)&!$([N&D3])&!$([N&D4])&!$(N[O,N])&!$(N[C,S]=[S,O,N])]"],
+        "num_reactants": 2, 
+        "reaction_string": "[N;$(N-[#6]):3]=[C;$(C=O):1].[N;$(N[#6]);!$(N=*);!$([N-]);!$(N#*);!$([ND3]);!$([ND4]);!$(N[O,N]);!$(N[C,S]=[S,O,N]):2]>>[N:3]-[C:1]-[N+0:2]", 
+        "RXN_NUM": 57
+        },
+    "58_thiourea": {
+        "reaction_name": "58_thiourea", 
+        "example_rxn_product": "CNC(=S)NC", 
+        "example_rxn_reactants": ["CN=C=S", "CN"],
+        "functional_groups": ["isothiocyanate_robust", "primary_or_secondary_amine_C_aryl_alkyl_robust"],
+        "group_smarts": ["[N&$(N-[#6])]=[C&$(C=S)]", "[N&$(NC)&!$(N=*)&!$([N&-])&!$(N#*)&!$([N&D3])&!$([N&D4])&!$(N[O,N])&!$(N[C,S]=[S,O,N])]"],
+        "num_reactants": 2, 
+        "reaction_string": "[N;$(N-[#6]):3]=[C;$(C=S):1].[N;$(N[#6]);!$(N=*);!$([N-]);!$(N#*);!$([ND3]);!$([ND4]);!$(N[O,N]);!$(N[C,S]=[S,O,N]):2]>>[N:3]-[C:1]-[N+0:2]", 
+        "RXN_NUM": 58
+        }
+}

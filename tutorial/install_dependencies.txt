@@ -1,0 +1,43 @@
+# To install dependencies.
+# This is based on a Linux environment.
+
+# Need package managers conda will install both pip and conda so go with conda
+# Download conda
+bash ~/Downloads/Anaconda3-2019.10-Linux-x86_64.sh
+
+
+# Get python dependencies
+conda install -c conda-forge rdkit
+conda install numpy
+conda install scipy
+pip install matplotlib
+pip install func-timeout
+# We can skip mpi4py unless we are making a server docker
+
+
+# Download a PDBQT Converter
+# For Babel
+sudo apt install openbabel
+# Get babel PATH so that we can provide it to AutoGrow.
+which obabel
+	-is /usr/bin/obabel in ubuntu
+	--obabel_path /usr/bin/obabel
+
+# Download the MGLTools if it using that:
+# via commandline (Slow but works)
+wget http://mgltools.scripps.edu/downloads/downloads/tars/releases/REL1.5.6/mgltools_x86_64Linux2_1.5.6.tar.gz
+
+
+tar -xvzf mgltools_x86_64Linux2_1.5.6.tar.gz
+cd mgltools_x86_64Linux2_1.5.6
+./install.sh
+# Get MGLTools PATH so that we can provide it to AutoGrow.
+pwd
+	--mgltools_directory ~/mgltools_x86_64Linux2_1.5.6/
+
+cd ..
+# Download git
+sudo apt install git
+
+# Download AutoGrow 4 via git
+git clone https://git.durrantlab.pitt.edu/jdurrant/autogrow4.git

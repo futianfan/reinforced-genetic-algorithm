@@ -1,0 +1,99 @@
+Many small modifications have been the reactions in this set which are derived from .
+
+    Hartenfeller et. al., J. Chem. Inf. Model., 2011, 51 (12), p 3093-3098
+    Hartenfeller et. al., J. Chem. Inf. Model., 2012, 52 (5), p 1167-1178
+
+Small changes which were made include:
+    - Adjusting some SMARTs to be more inclusive, when chemically acceptable.
+    - Canonicalizing functional groups so that all reactions which use a functional group
+        able to use the same functional group complementary_mol library
+        - ie. 6 reactions require a general alkyne, but originally used multiple versions of
+            same SMART even though there was no limiting factor that differed between them.
+            So we made adapted those reactions to use the canonical smart parttern.
+
+    -Reaction 22 changed case example:
+        from c1ccccc1C(=O)C(=O)c1ccccc1ccccc1C(=O)
+            -was missing a "c1" at the begining of reactant 1 or end of reactant 2
+        to:    c1ccccc1C(=O)C(=O)c1ccccc1 c1ccccc1C(=O)
+    -Reaction 53 edited reaction:
+
+        1st reactant definition had a ";!OH1" which cause reaction to not work. This made test cases work.
+
+        Changed reaction from:
+        [c;$(c1[c;$(c[C,S,N](=[OD1])[*;R0;!OH1])]cccc1):1][C;$(C(=O)[O;H1])].[c;$(c1aaccc1):2][Cl,Br,I]>>[c:1][c:2]
+        To:
+        [c;$(c1[c;$(c[C,S,N](=[OD1])[*;R0])]cccc1):1][C;$(C(=O)[O;H1])].[c;$(c1aaccc1):2][Cl,Br,I]>>[c:1][c:2]
+
+        c1ccccc1C(=O)C(=O)c1ccccc1ccccc1C(=O)
+            -was missing a "c1" at the begining of reactant 1 or end of reactant 2
+        to:    c1ccccc1C(=O)C(=O)c1ccccc1 c1ccccc1C(=O)
+
+
+Major Changes
+
+    1) Reaction #48 48_sulfon_amide:
+        sulfonyl chloride is a reactant described in the original reaction, but sulfonyl chloride
+            is an unstable intermediate which is unlikely to be commercially available. 
+            Normally the reaction described would begin with a sulfonic acid with an R-group, which is
+            converted to sulfonyl chloride before the reaction.
+                - please see https://www.organic-chemistry.org/synthesis/N1S/sulfonamides.shtm  or
+                - An easy and handy synthesis of sulfonamides directly from sulfonic acids or its sodium salts is performed under microwave irradiation, has shown a good functional group tolerance, and is high yielding.
+                    L. De Luca, G. Giacomelli, J. Org. Chem., 2008, 73, 3967-3969.
+        Because sulfonic acids are commercially available and make sense for the purpose of Autogrow,
+            we chose to instead reduce this 2 step reaction to a simplified 1 step reaction
+            Which starts with the sulfonic acids and directly react it with an amine. This of course would
+            the intermediate generation of sulfonyl chloride in a wet lab setting.
+        We modified the reaction and description accordingly.
+
+        Changed from:
+            "48_sulfon_amide": {
+                "reaction_name": "48_sulfon_amide", 
+                "example_rxn_product": "CCNS(C)(=O)=O", 
+                "example_rxn_reactants": ["CS(=O)(=O)Cl", "NCC"],
+                "functional_groups": ["sulfonyl_chloride", "primary_or_secondary_amine_type_2_robust"],
+                "group_smarts": ["[S&$(S(=O)(=O)[C,N])]Cl", "[N&$(NC)&!$(N=*)&!$([N&-])&!$(N#*)&!$([N&D3])&!$([N&D4])&!$(N[c,O])&!$(N[C,S]=[S,O,N])]"],
+                "num_reactants": 2, 
+                "reaction_string": "[S;$(S(=O)(=O)[C,N]):1][Cl].[N;$(NC);!$(N=*);!$([N-]);!$(N#*);!$([ND3]);!$([ND4]);!$(N[c,O]);!$(N[C,S]=[S,O,N]):2]>>[S:1][N+0:2]", 
+                "RXN_NUM": 48
+                },
+        Changed to:
+            "48_sulfon_amide": {
+                "reaction_name": "48_sulfon_amide", 
+                "example_rxn_product": "CCNS(C)(=O)=O", 
+                "example_rxn_reactants": ["CS(=O)(=O)O", "NCC"],
+                "functional_groups": ["sulfonic_acid", "primary_or_secondary_amine_type_2_robust"],
+                "group_smarts": ["[S&$(S(=O)(=O)[C,N])]O", "[N&$(NC)&!$(N=*)&!$([N&-])&!$(N#*)&!$([N&D3])&!$([N&D4])&!$(N[c,O])&!$(N[C,S]=[S,O,N])]"],
+                "num_reactants": 2, 
+                "reaction_string": "[S;$(S(=O)(=O)[C,N]):1][O].[N;$(NC);!$(N=*);!$([N-]);!$(N#*);!$([ND3]);!$([ND4]);!$(N[c,O]);!$(N[C,S]=[S,O,N]):2]>>[S:1][N+0:2]", 
+                "RXN_NUM": 48
+                },
+
+    2) Reaction #7  Reaction 7 (7_thiazole)
+        The thioamide described in the smarts notation ([N&H2]-C=[S&D1]) is highly restrictive and only allows for a 
+            a NH2-C(R)=S with no execptions. This is a relatively rare compound not found within the commercially readily available
+            ZINC dataset. Thioamides are easily generated from amides using P2S5 or Lawesson's reagent (https://www.chemtube3d.com/hetthioamides_thiazole_formation/). 
+            For this reason we expanded the reaction to accept both thioamide(NH2-C(R)=S) and and a normal amide(NH2-C(R)=O)
+            
+            Because there can be resonance between the N and the S and both the NH2-C(R)=S and the NH=C(R)-SH structures 
+            can be used in this reaction (please citations below), we expanded the definition to include both versions of the ligand
+                The SMARTS was changed:
+                    From:   [N&H2]-[C]=[S&D1]
+                    To:     [$([N&H2]-[C]=[S&D1]),$([N&H1]=[C]-[SH1])]
+                    # Add in oxygen version of the amide
+                    To:     [$([N&H2]-[C]=[S&D1,O&D1]),$([N&H1]=[C]-[SH1,OH1])]
+
+                Reaction changed:
+
+                    From:   "[#6:6]-[C;R0:1](=[OD1])-[CH1;R0:5](-[#6:7])-[*;#17,#35,#53].[NH2:2]-[C:3]=[SD1:4]>>[c:1]2(-[#6:6]):[n:2]:[c:3]:[s:4][c:5]([#6:7]):2"
+                    To:     "[#6:6]-[C;R0:1](=[OD1])-[CH1;R0:5](-[#6:7])-[*;#17,#35,#53].[$([N&H2:2]-[C:3]([*:6])=[S&D1:4]),$([N&H1:2]=[C:3]([*:6])-[SH1:4])]>>[c:1]2(-[#6:6]):[n:2]:[c:3]([*:6]):[s:4][c:5]([#6:7]):2"
+
+                    -The extra ([*:6]) was added to the thioamide so that any R-groups branching from that carbon are retained in the final product due to the switch to recursive smarts
+                
+                    # Add in oxygen version of the amide
+                    To:     "[#6:6]-[C;R0:1](=[OD1])-[CH1;R0:5](-[#6:7])-[*;#17,#35,#53].[$([N&H2:2]-[C:3]([*:6])=[S&D1,O&D1:4]),$([N&H1:2]=[C:3]([*:6])-[SH1,OH1:4])]>>[c:1]2(-[#6:6]):[n:2]:[c:3]([*:6]):[s:4][c:5]([#6:7]):2"
+
+
+                Sources:  
+                    - https://www.chemtube3d.com/hetthiazole_formation/
+                    - https://www.chemtube3d.com/hetthioamides_thiazole_formation/
+                    - N. Ikemoto, J. Liu, K. M. . Brands, J. M. McNamara and P. J. Reider, Tetrahedron, 2003, 59, 1317–1325.
