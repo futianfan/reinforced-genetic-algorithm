@@ -25,6 +25,8 @@ physical simulation and data-driven modeling. According to the lock and key mode
 ## reinforced genetic algorithm
 
 
+<p align="center"><img src="fig/RGA.png" alt="logo" width="600px" /></p>
+
 
 
 ## Experiment
@@ -34,6 +36,9 @@ We report the optimization performance of all the methods as follows.
 
 <p align="center"><img src="fig/results.png" alt="logo" width="600px" /></p>
 
+
+
+<p align="center"><img src="fig/sns.png" alt="logo" width="350px" /></p>
 
 
 
