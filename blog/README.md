@@ -1,4 +1,4 @@
-# reinforced genetic algorithm for structure-based drug design
+# Reinforced Genetic Algorithm for Structure-based Drug Design
 
 
 This blog is written to introduce our recent NeurIPS 2022 paper [1]: Reinforced Genetic Algorithm for Structure-based Drug Design. 
