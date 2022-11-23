@@ -79,7 +79,52 @@ Our result shows reinforced genetic algorithm (RGA) achieves the best performanc
 
 
 
-We have open-sourced our code in https://github.com/futianfan/reinforced-genetic-algorithm.
+We have open-sourced our code in https://github.com/futianfan/reinforced-genetic-algorithm. 
+The code can be run in one bash command line after setting conda environment.  
+
+## conda 
+
+### setup conda environment
+```bash
+conda create -n autogrow --file rga.yml 
+```
+
+### activate conda environment
+
+```bash
+conda activate autogrow 
+```
+
+## run SBDD
+
+```
+python RunAutogrow.py \
+    --number_of_mutants_first_generation 50 \
+    --number_of_crossovers_first_generation 50 \
+    --number_of_mutants 50 \
+    --number_of_crossovers 50 \
+    --top_mols_to_seed_next_generation 50 \
+    --number_elitism_advance_from_previous_gen 50 \
+    --number_elitism_advance_from_previous_gen_first_generation 10 \
+    --diversity_mols_to_seed_first_generation 10 \
+    --diversity_seed_depreciation_per_gen 10 \
+    --num_generations 10 \
+    --mgltools_directory ./mgltools_x86_64Linux2_1.5.6/ \
+    --number_of_processors -1 \
+    --scoring_choice VINA \
+    --LipinskiLenientFilter \
+    --start_a_new_run \
+    --rxn_library click_chem_rxns \
+    --selector_choice Rank_Selector \
+    --dock_choice VinaDocking \
+    --max_variants_per_compound 5 \
+    --redock_elite_from_previous_gen False \
+    --generate_plot True \
+    --reduce_files_sizes True \
+    --use_docked_source_compounds True  
+```
+
+
 
 ## References
 
