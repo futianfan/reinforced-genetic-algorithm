@@ -45,8 +45,7 @@ We elaborate essential components for evolutionary Markov decision process as fo
 
 - **Action Space** The actions in an EMDP are to conduct the two evolutionary steps: crossover and mutation, in a population. As applying the crossover and mutation steps are deterministic, the actions in an EMDP focus on selecting parents and mutation types. Upon finish the action, we could obtain offspring pool. 
 
-- **State Transition Dynamics**  
-The state transition in an EMDP is identical to the evolution in an evolutionary process. Once we finish the actions and obtain the offspring pool, we apply molecular quality filters to filter out the ones unlikely to be drug and then select the most promising $K$ to form the parent set for the next generation. 
+- **State Transition Dynamics**  The state transition in an EMDP is identical to the evolution in an evolutionary process. Once we finish the actions and obtain the offspring pool, we apply molecular quality filters to filter out the ones unlikely to be drug and then select the most promising $K$ to form the parent set for the next generation. 
 
 - **Reward** We define the reward as the binding affinity change (docking score). The actions leading to stronger binding score would be prioritized. 
 
