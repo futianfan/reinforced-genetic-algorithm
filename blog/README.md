@@ -4,7 +4,10 @@
 This blog is written to introduce our recent NeurIPS 2022 paper [1]: Reinforced Genetic Algorithm for Structure-based Drug Design. 
 
 
+
+
 The paper proposes a reinforcement learning-based genetic algorithm for structure-based drug design. 
+This is the first successful attempt to use a neural model to guide the crossover and mutation operations in a genetic algorithm to suppress random-walk behavior and explore the chemical space intelligently. 
 The following figure illustrate the difference between genetic algorithm and reinforced genetic algorithm. 
 
 
@@ -17,21 +20,22 @@ The following figure illustrate the difference between genetic algorithm and rei
 
 Rapid drug discovery that requires less time and cost is of significant interest in pharmaceutical science. Structurebased drug design (SBDD) that leverages the three-dimensional (3D) structures of the diseaserelated proteins to design drug candidates is one primary approach to accelerate the drug discovery processes with
 physical simulation and data-driven modeling. According to the lock and key model, the molecules that bind tighter to a disease target are more likely to expose bioactivity against the disease, which has been verified experimentally. 
-As AlphaFold2 has provided accurate predictions to most human proteins [3], SBDD has a tremendous opportunity to discover new drugs for new targets that we cannot model before [2].
+As AlphaFold2 has provided accurate predictions to most human proteins [3], SBDD has a tremendous opportunity to discover new drugs for new targets that we cannot model before [2]. 
 
 
 
-## genetic algorithm
+## Traditional genetic algorithm (GA)
 
 Traditional combinatorial optimization methods such as genetic algorithms (GA) have demonstrated state-of-the-art performance in various molecular optimization tasks. However, they do not utilize protein target structure to inform design steps but rely on a random-walk-like exploration, which leads to unstable performance and no knowledge transfer between different tasks despite the similar binding physics.
 
 
 
-## reinforced genetic algorithm
+## Reinforced genetic algorithm (RGA)
 
 
-To achieve a more stable and efficient SBDD, we propose \fullname (\mname) that uses neural models to prioritize the profitable design steps and suppress random-walk behavior. 
+To achieve a more stable and efficient SBDD, we propose Reinforced genetic algorithm (RGA) that uses neural models to prioritize the profitable design steps and suppress random-walk behavior. 
 The neural models take the 3D structure of the targets and ligands as inputs and are pre-trained using native complex structures to utilize the knowledge of the shared binding physics from different targets and then fine-tuned during optimization. 
+Specifically, we propose an evolutionary Markov decision process (EMDP) that reformulates an evolutionary process as a Markov decision process, where the state is a population of molecules instead of a single molecule. 
 
 
 
@@ -49,14 +53,19 @@ RGA-pretrain and RGA-KT are two variants of RGA that without pretraining and wit
 Our result shows reinforced genetic algorithm (RGA) achieves the best performance in TOP-100/10/1 scores among all methods we compared. Compared to traditional genetic algorithm (Autogrow 4.0 [2]), RGA's better performance in docking score demonstrates that the policy networks contribute positively to the chemical space navigation and eventually help discover more potent binding molecules.
 
 
-<p align="center"><img src="fig/results.png" alt="logo" width="740px" /></p>
+<p align="center"><img src="fig/results.png" alt="logo" width="860px" /></p>
 
 
-**Sample efficiency** Especially in SBDD, when the oracle functions are expensive molecular simulations, robustness to random seeds is essential for improving the worst-case performance of algorithms. One of the major issues in traditional GAs is that they have a significant variance between multiple independent runs as they randomly select parents for crossover and mutation types. To examine this behavior, we run five independent runs for RGA, Autogrow 4.0 and graph-GA (three best baselines, all are GA methods) on all targets and plot the standard deviations between runs. As shown in the following figure, with policy networks guiding the action steps, we observed that the random-walk behavior in Autogrow 4.0 was suppressed in RGA, indicated by the smaller variance. Especially in the later learning phase (after 500 oracle calls), the policy networks are fine-tuned and guide the search more intelligently. This advantage leads to improved worst-case performance and a higher probability of successfully identifying bioactive drug candidates with constrained resources.
+**Sample efficiency** In SBDD, the oracle functions are expensive molecular simulations, robustness to random seeds is essential for improving the worst-case performance of algorithms. One of the major issues in traditional GAs is that they have a significant variance between multiple independent runs as they randomly select parents for crossover and mutation types. To examine this behavior, we run five independent runs for RGA, Autogrow 4.0 and graph-GA (three best baselines, all are GA methods) on all targets and plot the standard deviations between runs. As shown in the following figure, with policy networks guiding the action steps, we observed that the random-walk behavior in Autogrow 4.0 was suppressed in RGA, indicated by the smaller variance. Especially in the later learning phase (after 500 oracle calls), the policy networks are fine-tuned and guide the search more intelligently. This advantage leads to improved worst-case performance and a higher probability of successfully identifying bioactive drug candidates with constrained resources.
 
 
 
-<p align="center"><img src="fig/sns.png" alt="logo" width="350px" /></p>
+<p align="center"><img src="fig/sns.png" alt="logo" width="450px" /></p>
+
+
+**Example** We visualize one designed ligand with optimal affinity for closer inspection and find both ligands bind tightly with the targets. 
+
+<p align="center"><img src="fig/7l11.png" alt="logo" width="350px" /></p>
 
 
 
