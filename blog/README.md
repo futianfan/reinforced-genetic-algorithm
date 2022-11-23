@@ -38,6 +38,17 @@ The neural models take the 3D structure of the targets and ligands as inputs and
 Specifically, we propose an evolutionary Markov decision process (EMDP) that reformulates an evolutionary process as a Markov decision process, where the state is a population of molecules instead of a single molecule. 
 
 
+We elaborate essential components for evolutionary Markov decision process as follows. 
+
+- **State Space** We define the population at the t-step generation. A state includes population of candidate molecules and their 3D poses docked to the target, fully observable to the RL agent. At the beginning of the EMDP, we randomly select a population of candidate molecules and use docking simulation to yield their 3D poses as the initial state. 
+
+
+- **Action Space** The actions in an EMDP are to conduct the two evolutionary steps: crossover and mutation, in a population. As applying the crossover and mutation steps are deterministic, the actions in an EMDP focus on selecting parents and mutation types. Upon finish the action, we could obtain offspring pool. 
+
+- **State Transition Dynamics**  
+The state transition in an EMDP is identical to the evolution in an evolutionary process. Once we finish the actions and obtain the offspring pool, we apply molecular quality filters to filter out the ones unlikely to be drug and then select the most promising $K$ to form the parent set for the next generation. 
+
+- **Reward** We define the reward as the binding affinity change (docking score). The actions leading to stronger binding score would be prioritized. 
 
 
 
