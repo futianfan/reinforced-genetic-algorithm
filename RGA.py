@@ -3,15 +3,15 @@
 - policy network 
 - for i in 1,...,generation
 	- crossover
-		- use policy network to select ligand *** 
+		- RGA use policy network to select ligand *** 
 		- crossover
 		- docking 
-		- update policy network *** 
+		- RGA update policy network *** 
 	- mutation 
-		- use policy network to select ligand *** 
+		- RGA use policy network to select ligand *** 
 		- mutation 
 		- docking 
-		- update policy network ***
+		- RGA update policy network ***
 	- elites 
 
 '''
