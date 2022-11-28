@@ -98,7 +98,7 @@ conda activate autogrow
 ## run SBDD
 
 ```
-python RunAutogrow.py \
+python run.py \
     --number_of_mutants_first_generation 50 \
     --number_of_crossovers_first_generation 50 \
     --number_of_mutants 50 \
