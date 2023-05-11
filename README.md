@@ -54,8 +54,9 @@ download [mgltools](https://ccsb.scripps.edu/mgltools/downloads/). then install 
 
 ```bash
 tar -zxvf xxx.tar.gz 
-cd xxx
+cd mgltools_x86_64Linux2_1.5.6
 ./install.sh 
+cd .. 
 ```
 
 
