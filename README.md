@@ -35,19 +35,28 @@ Specifically, we propose an evolutionary Markov decision process (EMDP) that ref
 
 
 
-## conda 
+## setup 
 
-### install
+### conda install
 ```bash
 conda create -n autogrow --file rga.yml 
 ```
 
 
-### activation 
+### conda activation 
 ```bash
 conda activate autogrow 
 ```
 
+### download mgltools 
+
+download [mgltools](https://ccsb.scripps.edu/mgltools/downloads/). then install mgltools
+
+```bash
+tar -zxvf xxx.tar.gz 
+cd xxx
+./install.sh 
+```
 
 
 
