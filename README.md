@@ -65,7 +65,7 @@ cd ..
 
 
 ```
-python RunAutogrow.py \
+python RGA.py \
     --filename_of_receptor ./tutorial/PARP/4r6eA_PARP1_prepared.pdb \
     --center_x -70.76 --center_y  21.82 --center_z 28.33 \
     --size_x 25.0 --size_y 16.0 --size_z 25.0 \
