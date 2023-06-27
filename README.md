@@ -129,5 +129,21 @@ python RGA.py \
 
 
 
+## References
+
+[1] Tianfan Fu*, Wenhao Gao*, Connor W. Coley, Jimeng Sun. Reinforced Genetic Algorithm for Structure-based Drug Design. Neural Information Processing Systems (NeurIPS) 2022. 
+
+[2] Spiegel, J. O. and Durrant, J. D. Autogrow4: an opensource genetic algorithm for de novo drug design and
+lead optimization. Journal of cheminformatics, 12(1): 1–16, 2020.
+
+[3] Jumper, John, et al. "Highly accurate protein structure prediction with AlphaFold." Nature 596.7873 (2021): 583-589. 
+
+
+
+
+
+
+
+
 
 
