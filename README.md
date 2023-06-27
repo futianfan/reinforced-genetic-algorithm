@@ -35,7 +35,7 @@ Specifically, we propose an evolutionary Markov decision process (EMDP) that ref
 
 
 
-## setup 
+## Setup 
 
 ### conda install
 ```bash
@@ -61,7 +61,7 @@ cd ..
 
 
 
-## run 
+## Run 
 
 
 ```
