@@ -53,7 +53,7 @@ Our result shows reinforced genetic algorithm (RGA) achieves the best performanc
 
 
 
-<p align="center"><img src="fig/sns.png" alt="logo" width="450px" /></p>
+<p align="center"><img src="blog/fig/sns.png" alt="logo" width="450px" /></p>
 
 
 **Example** We visualize one designed ligand with optimal affinity for closer inspection and find both ligands bind tightly with the targets. 
