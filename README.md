@@ -5,7 +5,7 @@ This repository is for our recent NeurIPS 2022 paper: Reinforced Genetic Algorit
 
 The paper proposes a reinforcement learning-based genetic algorithm for structure-based drug design. 
 This is the first successful attempt to use a neural model to guide the crossover and mutation operations in a genetic algorithm to suppress random-walk behavior and explore the chemical space intelligently. 
-The following figure illustrate the difference between genetic algorithm and reinforced genetic algorithm. 
+The following figure illustrates the difference between genetic algorithm and reinforced genetic algorithm. 
 
 
 <p align="center"><img src="blog/fig/RGA.png" alt="logo" width="860px" /></p>
